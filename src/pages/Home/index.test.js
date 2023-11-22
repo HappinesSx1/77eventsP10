@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Home from "./index";
 
 describe("When Form is created", () => {
@@ -21,24 +21,32 @@ describe("When Form is created", () => {
         })
       );
       await screen.findByText("En cours");
-      await screen.findByText("Message envoyé !");
+      // Utiliser une attente explicite pour le message de succès
+      await waitFor(() => {
+        expect(screen.getByText("Message envoyé !"));
+      });
+    });
+    it("the success message is displayed", async () => {
+      // Utiliser une attente explicite pour le message de succès
+      await waitFor(() => {
+        render(<Home />);
+        expect(screen.getByText("Message envoyé !")).toBeInTheDocument();
+      });
     });
   });
-
 });
-
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
     // to implement
-  })
+  });
   it("a list a people is displayed", () => {
     // to implement
-  })
+  });
   it("a footer is displayed", () => {
     // to implement
-  })
+  });
   it("an event card, with the last event, is displayed", () => {
     // to implement
-  })
+  });
 });

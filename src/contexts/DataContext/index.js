@@ -22,7 +22,6 @@ export const DataProvider = ({ children }) => {
   const [lastEvent, setLastEvent] = useState(null);
   const getData = useCallback(async () => {
     try {
-      // setData(await api.loadData());
       const apiData = await api.loadData();
       setData(apiData);
       const last = apiData.events.sort(
