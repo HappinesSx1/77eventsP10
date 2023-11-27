@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Form from "./index";
 
 describe("When Events is created", () => {
@@ -21,12 +21,9 @@ describe("When Events is created", () => {
           bubbles: true,
         })
       );
+      await screen.findByText("Envoyer");
 
       await screen.findByText("En cours");
-      expect(screen.findByText("Envoyer"));
-      // await waitFor(() => {
-      //   .toBeInTheDocument();
-      // });
       expect(onSuccess).toHaveBeenCalled();
     });
   });
