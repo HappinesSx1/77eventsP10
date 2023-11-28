@@ -42,3 +42,5 @@ describe("When slider is created", () => {
     );
   });
 });
+
+// https://chat.openai.com/share/064c2c30-e444-4840-9d8e-17ca607b3255

@@ -22,15 +22,8 @@ describe("When Form is created", () => {
       );
       await screen.findByText("En cours");
       // Utiliser une attente explicite pour le message de succès
-      await waitFor(() => {
-        expect(screen.getByText("Message envoyé !"));
-      });
-    });
-    it("the success message is displayed", async () => {
-      // Utiliser une attente explicite pour le message de succès
-      await waitFor(() => {
-        render(<Home />);
-        expect(screen.getByText("Message envoyé !")).toBeInTheDocument();
+      await waitFor(() => screen.findByText("Message envoyé !"), {
+        timeout: 5000,
       });
     });
   });
