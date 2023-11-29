@@ -34,10 +34,23 @@ describe("When a page is created", () => {
     // to implement
   });
   it("a list a people is displayed", () => {
-    // to implement
+    // const names = [
+    //   "Samira",
+    //   "Jean-baptiste",
+    //   "Alice",
+    //   "Luís",
+    //   "Christine",
+    //   "Isabelle",
+    // ];
+    // render(<Page />);
+    // names.forEach((name) => {
+    //   expect(screen.getByText(name)).toBeInTheDocument();
+    // });
   });
   it("a footer is displayed", () => {
-    // to implement
+    // const { getByTestId } = render(<Page />);
+    // const footerElement = getByTestId('footer');
+    // expect(footerElement).toBeInTheDocument();
   });
   it("an event card, with the last event, is displayed", () => {
     // to implement
